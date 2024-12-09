@@ -52,12 +52,12 @@ const copyToClipboard = (content: string = porps.content) => {
       :size="btnConfig.size"
       :fill="btnConfig.fill"
     />
-    <close-one
+    <!-- <close-one
       v-show="btnStatus === 'error'"
       :theme="btnConfig.theme"
       :size="btnConfig.size"
       :fill="btnConfig.fill"
-    />
+    /> -->
     <span class="text-xs ml-0.5 text-gray-500 leading-none">{{
       btnTips[btnStatus]
     }}</span>
