@@ -106,11 +106,15 @@ const sendChatMessage = async (content: string = messageContent.value) => {
     clearMessageContent();
     messageList.value.push({ role: "assistant", content: "" });
 
+    console.log("messageList.value", messageList.value);
+
     const { body, status } = await chat(messageList.value, getAPIKey());
     if (body) {
       const reader = body.getReader();
       await readStream(reader, status);
     }
+
+    console.log("messageList.value", messageList.value);
   } catch (error: any) {
     appendLastMessageContent(error);
   } finally {
@@ -194,6 +198,7 @@ const saveAPIKey = (apiKey: string) => {
   return true;
 };
 
+//sk-9hIspjASTQhbu8BbQRRORVeCLjmaTJVl8U7RyUjgdr4eFJkT
 const getAPIKey = () => {
   if (apiKey) return apiKey;
   const aesAPIKey = localStorage.getItem("apiKey") ?? "";

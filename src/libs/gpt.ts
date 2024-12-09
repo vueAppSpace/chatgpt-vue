@@ -2,7 +2,9 @@ import type { ChatMessage } from "@/types";
 
 export async function chat(messageList: ChatMessage[], apiKey: string) {
   try {
-    const result = await fetch("https://api.chatanywhere.tech/v1/chat/completions", {
+    //https://api.chatanywhere.org
+    //https://api.chatanywhere.tech
+    const result = await fetch("https://api.chatanywhere.org/v1/chat/completions", {
       method: "post",
       // signal: AbortSignal.timeout(8000),
       // 开启后到达设定时间会中断流式输出
