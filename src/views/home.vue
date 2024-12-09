@@ -185,7 +185,7 @@ const clickConfig = () => {
 const getSecretKey = () => "lianginx";
 
 const saveAPIKey = (apiKey: string) => {
-  if (apiKey.slice(0, 3) !== "sk-" || apiKey.length !== 51) {
+  if (apiKey.slice(0, 3) !== "sk-") {
     alert("API Key 错误，请检查后重新输入！");
     return false;
   }
